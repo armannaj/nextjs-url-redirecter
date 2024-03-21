@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a URL Redirecter app written with Next.js 14+.
+This can be used to redirect users from your old domain to a new domain and preserve SEO.
 
 ## Getting Started
 
-First, run the development server:
+1. Fork this repo onto your own account
+2. Create and account / Login on [Vercel.com](https://www.vercel.com)
+3. Start a deploy for this repo (from your own account) to vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   1. BEFORE you hit 'Deploy' button, make sure you set the environment variable below:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```
+   WEBSITE="https://your-new-domain.com"
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Deploy
+5. Go to Settings > Domains , and add your **old domain** there.
+6. Set the required DNS changes for your old domain to point to this deployment
+7. Done!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+After this, any user goes to your old domain will be redirected permanently (using 308 Permanent Redirect HTTP Code) to your new domain.
 
-## Learn More
+Any url and path is forwarded to your new domain as well.
 
-To learn more about Next.js, take a look at the following resources:
+## Credits
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Arman -
+<a href="https://twitter.com/programmerByDay" target="_blank">
+<img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/programmerByDay?label=Follow%20me%20%40programmerByDay">
+</a>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Initially created this for [Taranify Mood AI](https://www.taranify.com)
